@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+
+    <string-array name="items">
+        <item>Select Answer</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+    </string-array>
+</resources>
