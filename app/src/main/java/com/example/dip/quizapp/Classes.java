@@ -1,18 +1,18 @@
 package com.example.dip.quizapp;
 
 public class Classes {
-    String code,className;
+    public String code,className;
 
-    void setCode(String c){
+    public void setCode(String c){
         code = c;
     }
-    String getCode(){
+    public String getCode(){
         return code;
     }
-    void setClassName(String c){
+    public void setClassName(String c){
         className = c;
     }
-    String getClassName(){
+    public String getClassName(){
         return className;
     }
 }

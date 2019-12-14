@@ -48,7 +48,7 @@ public class signIn extends AppCompatActivity {
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken("466020745046-1hpmtvoqfg3md4vkp452regadbei1sqf.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
 
@@ -95,7 +95,7 @@ public class signIn extends AppCompatActivity {
             } catch (Exception e) {
                 // Google Sign In failed, update UI appropriately
                 // Log.w(TAG, "Google sign in failed", e);
-                Toast.makeText(signIn.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(signIn.this, e.getMessage()+"one", Toast.LENGTH_LONG).show();
                 // ...
             }
         }

@@ -31,6 +31,7 @@ public class createClass extends AppCompatActivity {
         code_generate = findViewById(R.id.create_code);
         exam_name = findViewById(R.id.Exam_name);
         codeview = findViewById(R.id.exam_code);
+        db = FirebaseDatabase.getInstance().getReference();
 
         mAuth = FirebaseAuth.getInstance();
         Toast.makeText(this, "" + mAuth.getCurrentUser().getEmail(), Toast.LENGTH_LONG).show();
@@ -71,7 +72,9 @@ public class createClass extends AppCompatActivity {
     void uploadtodb(){
         upload.setCode(code);
         upload.setClassName(ques);
-        FirebaseDatabase.getInstance().getReference("users").child(userId).child(code).setValue(upload);
+        //Toast.makeText(createClass.this, userId, Toast.LENGTH_LONG).show();
+        //Toast.makeText(createClass.this, code, Toast.LENGTH_LONG).show();
+        FirebaseDatabase.getInstance().getReference("users").child(userId.toString()).child(code.toString()).setValue(upload);
         Toast.makeText(createClass.this, "Created", Toast.LENGTH_LONG).show();
         finish();
     }

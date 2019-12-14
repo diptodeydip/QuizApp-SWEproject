@@ -1,7 +1,7 @@
 package com.example.dip.quizapp;
 
 public class Answerformat {
-    String question,answer,verdict;
+    public String question,answer,verdict;
 
     public void setQuestion(String question) {
         this.question = question;

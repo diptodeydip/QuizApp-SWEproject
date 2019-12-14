@@ -1,7 +1,7 @@
 package com.example.dip.quizapp;
 
 public class Questions {
-    String question,opa,opb,opc,opd,ca,key;
+    public String question,opa,opb,opc,opd,ca,key;
 
     public String getQuestion() {
         return question;

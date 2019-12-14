@@ -74,7 +74,7 @@ public class Classlist extends AppCompatActivity implements ClassAdapter.OnItemC
                 mAuth.signOut(); //get signed out
                 // Configure Google Sign In
                 GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                        .requestIdToken(getString(R.string.default_web_client_id))
+                        .requestIdToken("466020745046-1hpmtvoqfg3md4vkp452regadbei1sqf.apps.googleusercontent.com")
                         .requestEmail()
                         .build();
 

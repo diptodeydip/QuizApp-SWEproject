@@ -1,7 +1,7 @@
 package com.example.dip.quizapp;
 
 public class resultformat {
-    String reg,marks;
+    public String reg,marks;
 
     public String getReg() {
         return reg;
