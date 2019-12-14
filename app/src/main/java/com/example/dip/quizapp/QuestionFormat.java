@@ -1,6 +1,6 @@
 package com.example.dip.quizapp;
 
-public class Questions {
+public class QuestionFormat {
     public String question,opa,opb,opc,opd,ca,key;
 
     public String getQuestion() {

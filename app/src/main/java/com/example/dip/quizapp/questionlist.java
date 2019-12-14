@@ -2,7 +2,6 @@ package com.example.dip.quizapp;
 
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,12 +11,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,7 +19,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +27,7 @@ public class questionlist extends AppCompatActivity implements QuesAdapter.OnIte
 
     RecyclerView rView;
     DatabaseReference db, image_db;
-    List<Questions> uploads;
+    List<QuestionFormat> uploads;
     ProgressBar pbar;
     QuesAdapter iAdapter;
     FirebaseAuth mAuth;
@@ -89,7 +82,7 @@ public class questionlist extends AppCompatActivity implements QuesAdapter.OnIte
                 uploads.clear();
 
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    Questions upload = postSnapshot.getValue(Questions.class);
+                    QuestionFormat upload = postSnapshot.getValue(QuestionFormat.class);
                     upload.setKey(postSnapshot.getKey());
                     uploads.add(upload);
 
@@ -117,7 +110,7 @@ public class questionlist extends AppCompatActivity implements QuesAdapter.OnIte
 
       @Override
     public void onDeleteClick(int position) {
-        Questions selectedItem = uploads.get(position);
+        QuestionFormat selectedItem = uploads.get(position);
         final String selectedKey = selectedItem.getKey();
         DatabaseReference db = FirebaseDatabase.getInstance().getReference("Classes").child(MainActivity.classCode)
                 .child("questions");

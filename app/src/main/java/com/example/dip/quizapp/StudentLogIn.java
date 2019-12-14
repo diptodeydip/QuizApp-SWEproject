@@ -53,11 +53,13 @@ public class StudentLogIn extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 if (snapshot.hasChild(code.getText().toString())) {
-                    // run some code
+                    Toast.makeText(getApplicationContext(),"Entering",Toast.LENGTH_SHORT).show();
+                    questionlistforstudent.flag.clear(); //
+
+                    // check if the user already sat for exam
                     Query userNameQuery = FirebaseDatabase.getInstance().getReference().child("Classes").child(code.getText().toString())
                             .child("participants")
                             .orderByChild(reg.getText().toString()).equalTo("1");
-
                     userNameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -67,21 +69,36 @@ public class StudentLogIn extends AppCompatActivity {
 
                             }
                             else{
-                                Toast.makeText(getApplicationContext(),"Only once You can sit for this exam",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"Only once You can sit for this exam",Toast.LENGTH_LONG).show();
                                 MainActivity.participantFlag = "0";
                             }
-                            MainActivity.classCode = code.getText().toString();
-                            MainActivity.userFlag = "Student";
-                            MainActivity.reg = reg.getText().toString();
-                            finish();
-                            startActivity(new Intent(StudentLogIn.this,questionlistforstudent.class));
-
                         }
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
                         }
                     });
                     //
+                    //To check if the classroom is open or not
+                    Query q = FirebaseDatabase.getInstance().getReference().child("Classes").child(code.getText().toString())
+                            .orderByChild("value").equalTo("1");
+                    q.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.getChildrenCount()==0){
+                                MainActivity.participantFlag = "1";
+                                Toast.makeText(getApplicationContext(),"You can only see result",Toast.LENGTH_SHORT).show();
+                            }
+                            MainActivity.classCode = code.getText().toString();
+                            MainActivity.userFlag = "Student";
+                            MainActivity.reg = reg.getText().toString();
+                            finish();
+                            startActivity(new Intent(StudentLogIn.this,questionlistforstudent.class));
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+                    ///
                 }
                 else{
                     code.setError("Valid Code Required");

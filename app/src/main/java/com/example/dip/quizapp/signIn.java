@@ -133,6 +133,7 @@ public class signIn extends AppCompatActivity {
 
         //GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         MainActivity.userFlag = "Teacher";
+
         finish();
         startActivity(intent);
         /*

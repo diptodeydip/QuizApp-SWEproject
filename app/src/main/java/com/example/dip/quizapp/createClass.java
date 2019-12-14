@@ -12,6 +12,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import org.apache.commons.lang3.RandomStringUtils;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class createClass extends AppCompatActivity {
@@ -75,6 +78,8 @@ public class createClass extends AppCompatActivity {
         //Toast.makeText(createClass.this, userId, Toast.LENGTH_LONG).show();
         //Toast.makeText(createClass.this, code, Toast.LENGTH_LONG).show();
         FirebaseDatabase.getInstance().getReference("users").child(userId.toString()).child(code.toString()).setValue(upload);
+        FirebaseDatabase.getInstance().getReference("Classes").child(code.toString())
+                .child("flag").child("value").setValue("0");
         Toast.makeText(createClass.this, "Created", Toast.LENGTH_LONG).show();
         finish();
     }

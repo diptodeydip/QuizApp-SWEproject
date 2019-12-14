@@ -12,12 +12,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +31,7 @@ public class questionlistforstudent extends AppCompatActivity implements QuesAda
 
     RecyclerView rView;
     DatabaseReference db, image_db;
-    List<Questions> uploads;
+    List<QuestionFormat> uploads;
     ProgressBar pbar;
     QuesAdapter iAdapter;
     FirebaseAuth mAuth;
@@ -47,6 +41,7 @@ public class questionlistforstudent extends AppCompatActivity implements QuesAda
     Button result,submit;
     GoogleSignInClient mGoogleSignInClient;
     String user_email;
+    public static Map<Integer,Boolean> flag = new HashMap();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,7 +126,7 @@ public class questionlistforstudent extends AppCompatActivity implements QuesAda
                 uploads.clear();
 
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    Questions upload = postSnapshot.getValue(Questions.class);
+                    QuestionFormat upload = postSnapshot.getValue(QuestionFormat.class);
                 /*    if(upload.getId().toString().equals(userId)) {
                         upload.setKey(postSnapshot.getKey());
                         */
@@ -165,7 +160,12 @@ public class questionlistforstudent extends AppCompatActivity implements QuesAda
 
     @Override
     public void onAnswerClick(int position) {
-        Questions selectedItem = uploads.get(position);
+        //Mark to flag that question is answered
+        flag.put(position,true);
+        iAdapter.notifyDataSetChanged(); // to update adapter/recyclerview
+        //
+
+        QuestionFormat selectedItem = uploads.get(position);
         Answerformat upload = new Answerformat();
         upload.setAnswer(MainActivity.answer);
         upload.setQuestion(selectedItem.getQuestion());

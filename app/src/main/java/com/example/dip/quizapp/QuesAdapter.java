@@ -2,9 +2,7 @@ package com.example.dip.quizapp;
 
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -19,14 +17,20 @@ import android.widget.Toast;
 //import com.squareup.picasso.Picasso;
 
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.List;
 
 public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.ImageViewHolder> {
     private Context mContext;
-    private List<Questions> mUploads;
+    private List<QuestionFormat> mUploads;
     private OnItemClickListener mListener;
 
-    public QuesAdapter(Context context, List<Questions> uploads) {
+    public QuesAdapter(Context context, List<QuestionFormat> uploads) {
         mContext = context;
         mUploads = uploads;
     }
@@ -39,7 +43,7 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.ImageViewHolde
 
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position) {
-        Questions uploadCurrent = mUploads.get(position);
+        QuestionFormat uploadCurrent = mUploads.get(position);
 
         holder.a.setText("A : "+uploadCurrent.getOpa());
         holder.b.setText("B : "+uploadCurrent.getOpb());
@@ -48,6 +52,12 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.ImageViewHolde
         holder.q.setText("Q"+"-"+(position+1)+"\n"+uploadCurrent.getQuestion());
         if(MainActivity.userFlag.equalsIgnoreCase("Teacher"))
         holder.ca.setText("Correct Ans : "+uploadCurrent.getCa());
+
+        try {
+             if(questionlistforstudent.flag.get(position)==true)
+             holder.mark.setVisibility(View.VISIBLE);
+        }
+        catch (Exception e){};
 
     }
 
@@ -62,6 +72,7 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.ImageViewHolde
             , MenuItem.OnMenuItemClickListener {
 
         public TextView a,b,c,d,ca,q;
+        public ImageView mark;
 
         public ImageViewHolder(View itemView) {
 
@@ -72,6 +83,7 @@ public class QuesAdapter extends RecyclerView.Adapter<QuesAdapter.ImageViewHolde
             c = itemView.findViewById(R.id.textView44);
             d = itemView.findViewById(R.id.textView55);
             ca = itemView.findViewById(R.id.textView66);
+            mark = itemView.findViewById(R.id.mark);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);

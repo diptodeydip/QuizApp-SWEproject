@@ -180,6 +180,24 @@ public class Classlist extends AppCompatActivity implements ClassAdapter.OnItemC
         Toast.makeText(Classlist.this, "Class deleted", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public  void onStopClick(int position){
+        Classes selectedItem = uploads.get(position);
+            FirebaseDatabase.getInstance().getReference("Classes").child(selectedItem.getCode())
+                    .child("flag").child("value").setValue("0");
+            Toast.makeText(Classlist.this, "Exam Stopped", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public  void onStartClick(int position){
+        Classes selectedItem = uploads.get(position);
+
+            FirebaseDatabase.getInstance().getReference("Classes").child(selectedItem.getCode())
+                    .child("flag").child("value").setValue("1");
+            Toast.makeText(Classlist.this, "Exam Started", Toast.LENGTH_SHORT).show();
+    }
+
+
 
     protected void onDestroy() {
         super.onDestroy();

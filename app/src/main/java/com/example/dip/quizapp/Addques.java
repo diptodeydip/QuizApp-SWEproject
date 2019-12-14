@@ -131,7 +131,7 @@ public class Addques extends AppCompatActivity {
     }
 
     void uploadtodb() {
-        Questions q = new Questions();
+        QuestionFormat q = new QuestionFormat();
         q.setCa(ca);
         q.setOpa(a);
         q.setQuestion(description);

@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         teacher.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
+                        questionlistforstudent.flag.clear(); //
                         startActivity(intent);
                     }
                 }
