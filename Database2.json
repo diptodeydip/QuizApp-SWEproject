@@ -1,0 +1,69 @@
+{
+  "Classes" : {
+    "GXK5NN" : {
+      "answer" : {
+        "72" : [ {
+          "answer" : "B",
+          "question" : "2+2?",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "A",
+          "question" : "3+3",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "A",
+          "question" : "5-6",
+          "verdict" : "Wrong"
+        } ]
+      },
+      "flag" : {
+        "value" : "1"
+      },
+      "participants" : {
+        "1576359833363" : {
+          "72" : "1"
+        }
+      },
+      "questions" : {
+        "1576359640555" : {
+          "ca" : "B",
+          "opa" : "3",
+          "opb" : "4",
+          "opc" : "5",
+          "opd" : "6",
+          "question" : "2+2?"
+        },
+        "1576359658201" : {
+          "ca" : "A",
+          "opa" : "6",
+          "opb" : "5",
+          "opc" : "7",
+          "opd" : "10",
+          "question" : "3+3"
+        },
+        "1576359690370" : {
+          "ca" : "B",
+          "opa" : "0",
+          "opb" : "-1",
+          "opc" : "1",
+          "opd" : "2",
+          "question" : "5-6"
+        }
+      },
+      "result" : {
+        "1576359833651" : {
+          "marks" : "2",
+          "reg" : "72"
+        }
+      }
+    }
+  },
+  "users" : {
+    "xKhjCAs0V2PubvpSDbku4AbCHzI2" : {
+      "GXK5NN" : {
+        "className" : "Test",
+        "code" : "GXK5NN"
+      }
+    }
+  }
+}

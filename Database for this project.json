@@ -1,0 +1,234 @@
+{
+  "Classes" : {
+    "zkvys5" : {
+      "answer" : {
+        "31" : [ {
+          "answer" : "C",
+          "question" : "2+2 =?",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "B",
+          "question" : "2+3 =? ",
+          "verdict" : "Wrong"
+        } ],
+        "100" : [ {
+          "answer" : "C",
+          "question" : "2+2 =?",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "A",
+          "question" : "2+3 =? ",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "A",
+          "question" : "Mahir ki vxd?",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "A",
+          "question" : "\nTarin kar?",
+          "verdict" : "Correct"
+        } ],
+        "1001" : {
+          "2" : {
+            "answer" : "A",
+            "question" : "Mahir ki vxd?",
+            "verdict" : "Correct"
+          }
+        },
+        "10001" : [ {
+          "answer" : "B",
+          "question" : "2+2 =?",
+          "verdict" : "Wrong"
+        }, {
+          "answer" : "D",
+          "question" : "2+3 =? ",
+          "verdict" : "Wrong"
+        }, {
+          "answer" : "A",
+          "question" : "Mahir ki vxd?",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "A",
+          "question" : "\nTarin kar?",
+          "verdict" : "Correct"
+        } ],
+        "2016331012" : [ {
+          "answer" : "A",
+          "question" : "2+2 =?",
+          "verdict" : "Wrong"
+        }, {
+          "answer" : "B",
+          "question" : "2+3 =? ",
+          "verdict" : "Wrong"
+        }, {
+          "answer" : "C",
+          "question" : "Mahir ki vxd?",
+          "verdict" : "Wrong"
+        }, {
+          "answer" : "D",
+          "question" : "\nTarin kar?",
+          "verdict" : "Wrong"
+        } ],
+        "2016331031" : [ {
+          "answer" : "D",
+          "question" : "2+2 =?",
+          "verdict" : "Wrong"
+        }, {
+          "answer" : "D",
+          "question" : "2+3 =? ",
+          "verdict" : "Wrong"
+        } ],
+        "2016331037" : [ {
+          "answer" : "C",
+          "question" : "2+2 =?",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "A",
+          "question" : "2+3 =? ",
+          "verdict" : "Correct"
+        } ],
+        "2016331072" : [ {
+          "answer" : "C",
+          "question" : "2+2 =?",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "B",
+          "question" : "2+3 =? ",
+          "verdict" : "Wrong"
+        } ],
+        "20162829292992" : [ {
+          "answer" : "B",
+          "question" : "2+2 =?",
+          "verdict" : "Wrong"
+        }, {
+          "answer" : "A",
+          "question" : "2+3 =? ",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "A",
+          "question" : "Mahir ki vxd?",
+          "verdict" : "Correct"
+        }, {
+          "answer" : "D",
+          "question" : "\nTarin kar?",
+          "verdict" : "Wrong"
+        }, {
+          "answer" : "B",
+          "question" : "bokachoda dipto\n",
+          "verdict" : "Correct"
+        } ]
+      },
+      "participants" : {
+        "1565093828041" : {
+          "2016331072" : "1"
+        },
+        "1565093878542" : {
+          "2016331037" : "1"
+        },
+        "1565100144665" : {
+          "31" : "1"
+        },
+        "1565115501118" : {
+          "100" : "1"
+        },
+        "1565170102563" : {
+          "10001" : "1"
+        },
+        "1565618100316" : {
+          "2016331012" : "1"
+        },
+        "1566977398627" : {
+          "20162829292992" : "1"
+        }
+      },
+      "questions" : {
+        "1565091232251" : {
+          "ca" : "C",
+          "opa" : "1",
+          "opb" : "22",
+          "opc" : "4",
+          "opd" : "5",
+          "question" : "2+2 =?"
+        },
+        "1565093543059" : {
+          "ca" : "A",
+          "opa" : "5",
+          "opb" : "0",
+          "opc" : "10",
+          "opd" : "6",
+          "question" : "2+3 =? "
+        },
+        "1565113037041" : {
+          "ca" : "A",
+          "opa" : "হ্যা",
+          "opb" : "না",
+          "opc" : "na",
+          "opd" : "na",
+          "question" : "Mahir ki vxd?"
+        },
+        "1565114343678" : {
+          "ca" : "A",
+          "opa" : "Asif er ",
+          "opb" : "Onno karo",
+          "opc" : "Onno karo",
+          "opd" : "Onno karo",
+          "question" : "\nTarin kar?"
+        },
+        "1566977312409" : {
+          "ca" : "B",
+          "opa" : "snsn",
+          "opb" : "ndn",
+          "opc" : "dnbd",
+          "opd" : "sbsbs",
+          "question" : "bokachoda dipto\n"
+        }
+      },
+      "result" : {
+        "1565093828348" : {
+          "marks" : "1",
+          "reg" : "2016331072"
+        },
+        "1565093878828" : {
+          "marks" : "2",
+          "reg" : "2016331037"
+        },
+        "1565100145014" : {
+          "marks" : "1",
+          "reg" : "31"
+        },
+        "1565115501416" : {
+          "marks" : "4",
+          "reg" : "100"
+        },
+        "1565170102845" : {
+          "marks" : "2",
+          "reg" : "10001"
+        },
+        "1565618100615" : {
+          "marks" : "0",
+          "reg" : "2016331012"
+        },
+        "1566977398976" : {
+          "marks" : "3",
+          "reg" : "20162829292992"
+        }
+      }
+    }
+  },
+  "users" : {
+    "UBKENAQm1iOTIeHzwR9XQCIpOwp1" : {
+      "vf3g7O" : {
+        "className" : "C",
+        "code" : "vf3g7O"
+      },
+      "xAHY8t" : {
+        "className" : "os",
+        "code" : "xAHY8t"
+      },
+      "zkvys5" : {
+        "className" : "cse 334",
+        "code" : "zkvys5"
+      }
+    }
+  }
+}
