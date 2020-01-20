@@ -131,8 +131,8 @@ public class questionlistforstudent extends AppCompatActivity implements QuesAda
                         upload.setKey(postSnapshot.getKey());
                         */
                     uploads.add(upload);
-
                 }
+                MainActivity.totalMarks = uploads.size();
                 iAdapter.notifyDataSetChanged();
                 pbar.setVisibility(View.INVISIBLE);
             }

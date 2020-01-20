@@ -37,7 +37,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Resultpage extends AppCompatActivity  {
-    Button saveResult,seeGraph;
+    Button saveResult,seeGraph,seeBar;
     RecyclerView rView;
     DatabaseReference db;
     List<resultformat> uploads;
@@ -47,7 +47,7 @@ public class Resultpage extends AppCompatActivity  {
     String userId;
     FirebaseStorage fs;
     static String data="";
-    Intent intent;
+    Intent intent,intent1;
     ValueEventListener dBListener;
 
     @Override
@@ -55,7 +55,7 @@ public class Resultpage extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultpage);
         intent = new Intent(this,ResultGraph.class);
-
+        intent1 = new Intent(this,barGraph.class);
 
         saveResult = (Button) findViewById(R.id.saveResult);
         saveResult.setOnClickListener(
@@ -70,6 +70,14 @@ public class Resultpage extends AppCompatActivity  {
                 new Button.OnClickListener(){
                     public void onClick(View v){
                         startActivity(intent);
+                    }
+                }
+        );
+        seeBar = (Button) findViewById(R.id.seeBar);
+        seeBar.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        startActivity(intent1);
                     }
                 }
         );

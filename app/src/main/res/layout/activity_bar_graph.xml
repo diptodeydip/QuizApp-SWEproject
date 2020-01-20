@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultGraph">
+    tools:context=".barGraph">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:rotation="270"
-        android:text="Marks"
+        android:text="Frequency"
         android:layout_marginLeft="2dp"
         android:textSize="10dp" />
 
@@ -20,13 +20,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Reg No"
+        android:text="Marks"
         android:layout_marginBottom="2dp"
         android:textSize="10dp" />
 
 
     <com.jjoe64.graphview.GraphView
-        android:id="@+id/graph"
+        android:id="@+id/graph1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="25dp" />

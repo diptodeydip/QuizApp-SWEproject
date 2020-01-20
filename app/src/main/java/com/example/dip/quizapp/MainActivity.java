@@ -19,6 +19,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private static final int EXTERNAL_STORAGE_CODE = 1, READ_EXTERNAL_STORAGE=2;
     Intent intent;
+    public static double totalMarks;
     DatabaseReference db;
     //public static String user_email;
     public static String classCode,participantFlag,userFlag,answer,reg;

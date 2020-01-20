@@ -194,6 +194,8 @@ public class Classlist extends AppCompatActivity implements ClassAdapter.OnItemC
 
             FirebaseDatabase.getInstance().getReference("Classes").child(selectedItem.getCode())
                     .child("flag").child("value").setValue("1");
+        FirebaseDatabase.getInstance().getReference("Classes").child(selectedItem.getCode())
+                .child("ifStarted").child("value1").setValue("1");
             Toast.makeText(Classlist.this, "Exam Started", Toast.LENGTH_SHORT).show();
     }
 

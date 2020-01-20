@@ -11,7 +11,7 @@
         android:id="@+id/saveResult"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-
+        android:textAllCaps="false"
         android:background="@drawable/btn_bg"
         android:text="Save" />
 
@@ -19,11 +19,23 @@
         android:id="@+id/seeGraph"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-
+        android:textAllCaps="false"
         android:layout_alignEnd="@+id/pbar7"
         android:layout_alignParentTop="true"
         android:background="@drawable/btn_bg"
-        android:text="See Graph" />
+        android:text="RegVsMark" />
+
+    <Button
+        android:id="@+id/seeBar"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/btn_bg"
+        android:text="Stat" />
+
     <ProgressBar
         android:id="@+id/pbar7"
         android:layout_width="wrap_content"

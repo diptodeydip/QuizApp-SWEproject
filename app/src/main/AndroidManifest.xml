@@ -26,7 +26,8 @@
         <activity android:name=".StudentLogIn" />
         <activity android:name=".questionlistforstudent" />
         <activity android:name=".Resultpage" />
-        <activity android:name=".ResultGraph"></activity>
+        <activity android:name=".ResultGraph" />
+        <activity android:name=".barGraph"></activity>
     </application>
 
 </manifest>

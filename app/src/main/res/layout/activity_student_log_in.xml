@@ -45,7 +45,7 @@
 
         android:layout_marginTop="16dp"
 
-        android:hint="2016331072"
+        android:hint="72"
         app:layout_constraintEnd_toStartOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline1"

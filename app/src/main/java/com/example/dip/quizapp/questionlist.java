@@ -17,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 
@@ -45,6 +46,23 @@ public class questionlist extends AppCompatActivity implements QuesAdapter.OnIte
 
         // Create Ques
         addques = findViewById(R.id.addques);
+        ////EXTRAAAA/////
+
+        Query q = FirebaseDatabase.getInstance().getReference().child("Classes").child(MainActivity.classCode)
+                .orderByChild("value1").equalTo("1");
+        q.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getChildrenCount()>0){
+                    addques.setVisibility(View.GONE);
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        //////////////////
         addques.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,8 +103,8 @@ public class questionlist extends AppCompatActivity implements QuesAdapter.OnIte
                     QuestionFormat upload = postSnapshot.getValue(QuestionFormat.class);
                     upload.setKey(postSnapshot.getKey());
                     uploads.add(upload);
-
                 }
+                MainActivity.totalMarks = uploads.size();
                 iAdapter.notifyDataSetChanged();
                 pbar.setVisibility(View.INVISIBLE);
             }
