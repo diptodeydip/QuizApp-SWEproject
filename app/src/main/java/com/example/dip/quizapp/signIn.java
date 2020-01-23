@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class signIn extends AppCompatActivity {
+public class signIn extends MenuBar {
 
     private SignInButton signIn;
     public static final int RC_SIGN_IN = 1;

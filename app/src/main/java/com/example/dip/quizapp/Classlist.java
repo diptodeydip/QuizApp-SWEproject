@@ -30,7 +30,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Classlist extends AppCompatActivity implements ClassAdapter.OnItemClickListener {
+public class Classlist extends MenuBar implements ClassAdapter.OnItemClickListener {
 
     RecyclerView rView;
     DatabaseReference db, image_db;

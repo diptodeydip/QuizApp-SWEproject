@@ -16,7 +16,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.util.HashMap;
 import java.util.Map;
 
-public class barGraph extends AppCompatActivity  {
+public class barGraph extends MenuBar  {
     DatabaseReference db;
     ValueEventListener dBListener;
     LineGraphSeries series;

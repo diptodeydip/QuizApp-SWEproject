@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Addques extends AppCompatActivity {
+public class Addques extends MenuBar {
 
     Spinner spinner;
     String ca,a,b,c,d,description;

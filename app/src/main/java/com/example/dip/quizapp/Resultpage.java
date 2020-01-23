@@ -36,7 +36,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Resultpage extends AppCompatActivity  {
+public class Resultpage extends MenuBar  {
     Button saveResult,seeGraph,seeBar;
     RecyclerView rView;
     DatabaseReference db;
@@ -105,7 +105,7 @@ public class Resultpage extends AppCompatActivity  {
 
                 }
                 //
-                Comparator c = Collections.reverseOrder(new Sortbyreg());
+                Comparator c = Collections.reverseOrder(new SortbyMarks()); // sort in descending order using this comparator
                 Collections.sort(uploads, c);
                 int size = uploads.size();
                 resultformat obj;
@@ -137,15 +137,15 @@ public class Resultpage extends AppCompatActivity  {
         db.removeEventListener(dBListener);
     }
 
-    class Sortbyreg implements Comparator<resultformat>
-    {
-        // Used for sorting in ascending order of
-        // roll number
-        public int compare(resultformat a, resultformat b)
-        {
-            return Integer.parseInt(a.marks) - Integer.parseInt(b.marks);
-        }
-    }
+//    class Sortbyreg implements Comparator<resultformat>
+//    {
+//        // Used for sorting in ascending order of
+//        // roll number
+//        public int compare(resultformat a, resultformat b)
+//        {
+//            return Integer.parseInt(a.marks) - Integer.parseInt(b.marks);
+//        }
+//    }
 
 
 

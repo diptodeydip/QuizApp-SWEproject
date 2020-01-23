@@ -24,7 +24,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class questionlist extends AppCompatActivity implements QuesAdapter.OnItemClickListener {
+public class questionlist extends MenuBar implements QuesAdapter.OnItemClickListener {
 
     RecyclerView rView;
     DatabaseReference db, image_db;

@@ -9,6 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.Formatter;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -34,16 +38,19 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
-public class ResultGraph extends AppCompatActivity  {
+public class ResultGraph extends MenuBar  {
     DatabaseReference db;
     ValueEventListener dBListener;
     LineGraphSeries series;
+    List<resultformat> uploads;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,20 +73,28 @@ public class ResultGraph extends AppCompatActivity  {
         series.setDrawDataPoints(true);
 
         db = FirebaseDatabase.getInstance().getReference("Classes").child(MainActivity.classCode).child("result");
-
+        uploads = new ArrayList<>();
 
 
         dBListener = db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 DataPoint dp[] = new DataPoint[(int) dataSnapshot.getChildrenCount()];
-                int index = 0;
+                uploads.clear();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     resultformat upload = postSnapshot.getValue(resultformat.class);
-
-                     dp[index] = new DataPoint(Integer.parseInt(upload.getReg()),Integer.parseInt(upload.getMarks()));
-                    index++;
+                    uploads.add(upload);
                 }
+                //sort in ascending order
+                Comparator c = new Sortbyreg();
+                Collections.sort(uploads, c);
+                int size = uploads.size();
+                resultformat obj;
+                for (int i=0; i<size; i++) {
+                    obj = uploads.get(i);
+                    dp[i] = new DataPoint(Integer.parseInt(obj.getReg()),Integer.parseInt(obj.getMarks()));
+                }
+
                 series.resetData(dp);
             }
 
@@ -90,6 +105,8 @@ public class ResultGraph extends AppCompatActivity  {
     }
 
     //Oncreate ended
+
+
 
 
 

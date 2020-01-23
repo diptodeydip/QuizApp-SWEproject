@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class createClass extends AppCompatActivity {
+public class createClass extends MenuBar {
     Button code_generate,save_class;
     TextView codeview;
     EditText exam_name;

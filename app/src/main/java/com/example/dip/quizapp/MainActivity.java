@@ -16,10 +16,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends MenuBar {
     private static final int EXTERNAL_STORAGE_CODE = 1, READ_EXTERNAL_STORAGE=2;
     Intent intent;
-    public static double totalMarks;
+    public static double totalMarks=1.0;
     DatabaseReference db;
     //public static String user_email;
     public static String classCode,participantFlag,userFlag,answer,reg;

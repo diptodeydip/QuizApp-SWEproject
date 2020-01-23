@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StudentLogIn extends AppCompatActivity {
+public class StudentLogIn extends MenuBar {
     Button login;
     EditText reg,code;
     @Override

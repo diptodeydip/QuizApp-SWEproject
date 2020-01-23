@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class questionlistforstudent extends AppCompatActivity implements QuesAdapter.OnItemClickListener {
+public class questionlistforstudent extends MenuBar implements QuesAdapter.OnItemClickListener {
 
     RecyclerView rView;
     DatabaseReference db, image_db;
