@@ -1,6 +1,6 @@
 # QuizApp
 <p align="center">
- <img src="https://drive.google.com/uc?export=view&id=1MJLGqydQNMaAvtmvz6HtYZDzEuPu9jb5" width=300px height=300px title="Click to enlarge picture"/>
+ <img src="photos/icon.png" width=300px height=300px title="Click to enlarge picture"/>
 </p>
 
 ## Intro
