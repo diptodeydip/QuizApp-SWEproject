@@ -4,7 +4,7 @@
 </p>
 
 ## Intro
-It was developed as a part of the coursework for Software Engineering course (2/2)
+It was developed as a part of the coursework for Software Engineering & Design Pattern course (2/2)
 
 ## About App
 Using this App one can conduct mcq exam .
